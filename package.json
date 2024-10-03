@@ -13,6 +13,7 @@
     "db:delete:test": "cross-env NODE_ENV=test node scripts/db/delete",
     "db:flush:dev": "cross-env NODE_ENV=development npm run db:delete:dev && npm run db:create:dev",
     "db:flush:test": "cross-env NODE_ENV=test npm run db:delete:test && npm run db:create:test",
+    "jsdoc": "jsdoc -c jsdoc.json",
     "migrate:dev": "npm run build && cross-env NODE_ENV=development dotenv -e .env sequelize db:migrate",
     "migrate:test": "npm run build && cross-env NODE_ENV=test dotenv -e .env sequelize db:migrate --env test",
     "migrate:prod": "sequelize db:migrate --env production",
@@ -92,7 +93,8 @@
     "concurrently": "^5.0.0",
     "dotenv-cli": "^5.1.0",
     "husky": "^4.2.3",
-    "jest-html-reporter": "^3.0.0"
+    "jest-html-reporter": "^3.0.0",
+    "jsdoc": "^4.0.3"
   },
   "jest": {
     "testEnvironment": "node",
@@ -136,5 +138,8 @@
       "/node_modules/",
       "/dist/"
     ]
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
